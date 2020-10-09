@@ -1,0 +1,27 @@
+<%- include('header') %>
+<main>
+  <% if(error) { %>
+  <h2><%= error %></h2>
+  <% } else { %>
+  <div class="card-deck mb-5 text-center">
+    <div class="card shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weigth-normal">Resultado da conversão</h4>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Cotação: R$ <%= cotacao %></li>
+          <li>Quantidade: <%= quantidade %> dólar(es)</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <h2>Total: R$ <%= conversao %></h2>
+      </div>
+    </div>
+  </div>
+  <% } %>
+  <a href="/" class="btn btn-lg btn-primary">
+    Nova conversão
+  </a>
+</main>
+<%- include('footer', {script:''}) %>

@@ -1,0 +1,56 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 20;
+}
+
+.modal__container {
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 95%;
+  background: var(--primary-background);
+  color: var(--text-color);
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__header {
+  font-size: 3rem;
+  text-align: center;
+  padding: 2rem 0;
+  box-shadow: 2px 2px 4px var(--text-color);
+}
+
+.header__button {
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+  left: 2rem;
+}
+
+.header__title {
+  font-weight: bold;
+}
+
+.modal__content {
+  flex: 1;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 7rem);
+}
+
+@media screen and (min-width: 470px) {
+  .modal__container {
+    width: 460px;
+  }
+}

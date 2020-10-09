@@ -1,0 +1,84 @@
+import styled from 'styled-components';
+import { darken } from 'polished';
+
+export const Container = styled.div`
+  max-width: 940px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0;
+
+    input {
+      background: rgba(0, 0, 0, 0.1);
+      border: 0;
+      border-radius: 4px;
+      height: 44px;
+      padding: 0 15px;
+      color: #fff;
+      margin: 0 0 10px;
+      width: 100%;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+
+    textarea {
+      background: rgba(0, 0, 0, 0.1);
+      border: 0;
+      border-radius: 4px;
+      height: 200px;
+      padding: 15px;
+      color: #fff;
+      margin: 0 0 10px;
+      width: 100%;
+      resize: none;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+
+    span {
+      color: #fb6f91;
+      align-self: flex-start;
+      margin: 0 0 10px;
+      font-weight: bold;
+    }
+  }
+`;
+
+export const SubmitButton = styled.button`
+  align-self: flex-end;
+
+  display: flex;
+  justify-content: flex-start;
+
+  background: #f94d6a;
+  margin: 5px 0 0;
+  padding: 11px 25px;
+
+  border: 0;
+  border-radius: 4px;
+
+  transition: background 0.2s;
+
+  &:hover {
+    background: ${darken(0.05, '#f94d6a')};
+  }
+
+  svg {
+    margin-right: 10px;
+  }
+
+  span {
+    color: #fff !important;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 0 !important;
+  }
+`;

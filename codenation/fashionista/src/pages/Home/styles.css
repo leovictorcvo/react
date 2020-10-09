@@ -1,0 +1,22 @@
+.gallery {
+  width: 94%;
+  padding: 2rem;
+  padding-top: 70px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(179px, 1fr));
+  gap: 8px;
+}
+
+@media screen and (min-width: 960px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(247px, 1fr));
+    gap: 12px;
+  }
+}
+
+@media screen and (min-width: 1279px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 12px;
+  }
+}

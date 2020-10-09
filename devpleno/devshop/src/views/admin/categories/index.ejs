@@ -1,0 +1,58 @@
+<%- include('../header') %>
+
+<section class="section-pagetop bg-primary">
+  <div class="container clearfix">
+    <h2 class="title-page">Categorias</h2>
+  </div>
+  <!-- container //  -->
+</section>
+
+<section class="section-content bg padding-y">
+  <div class="container">
+    <div class="row">
+      <main class="col-sm-12">
+        <a href="/admin/categorias/nova" class="btn btn-primary mb-3"
+          >Nova categoria</a
+        >
+        <% categories.forEach( category => { %>
+        <article class="card card-product">
+          <div class="card-body">
+            <div class="row">
+              <article class="col-sm-8 col-lg-10">
+                <h4 class="title"><%- category.name %></h4>
+                <p><%= category.description %></p>
+              </article>
+              <aside class="col-sm-4 col-lg-2 border-left">
+                <div class="action-wrap">
+                  <a
+                    href="/admin/categorias/editar/<%- category.id %>"
+                    class="btn btn-secondary"
+                  >
+                    Editar
+                  </a>
+                  <a
+                    href="/admin/categorias/excluir/<%- category.id %>"
+                    class="btn btn-danger"
+                  >
+                    Excluir
+                  </a>
+                </div>
+                <!-- action-wrap.// -->
+              </aside>
+              <!-- col.// -->
+            </div>
+            <!-- row.// -->
+          </div>
+          <!-- card-body .// -->
+        </article>
+        <!-- card product .// -->
+
+        <% }) %>
+      </main>
+      <!-- col.// -->
+    </div>
+  </div>
+  <!-- container .//  -->
+</section>
+
+<%- include('../../footer') %>

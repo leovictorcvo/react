@@ -1,0 +1,164 @@
+<%- include('header') %>
+
+<section class="section-pagetop bg-primary">
+  <div class="container clearfix">
+    <h2 class="title-page"><%- category[0].name %></h2>
+
+    <nav class="float-left">
+      <ol class="breadcrumb text-white">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item " aria-current="page">
+          <%- category[0].name %>
+        </li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<section class="section-content bg padding-y">
+  <div class="container">
+    <div class="row">
+      <main class="col-sm-12">
+        <% products.data.forEach( product => { %>
+        <article class="card card-product">
+          <div class="card-body">
+            <div class="row">
+              <aside class="col-sm-3">
+                <div class="img-wrap"><img src="/images/items/2.jpg" /></div>
+              </aside>
+
+              <article class="col-sm-6">
+                <h4 class="title"><%- product.name %></h4>
+                <div class="rating-wrap  mb-2">
+                  <ul class="rating-stars">
+                    <li style="width:80%" class="stars-active">
+                      <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                    </li>
+                  </ul>
+                  <div class="label-rating">132 reviews</div>
+                  <div class="label-rating">154 orders</div>
+                </div>
+                <p><%= product.description %></p>
+                <dl class="dlist-align">
+                  <dt>Color</dt>
+                  <dd>Black and white</dd>
+                </dl>
+                <dl class="dlist-align">
+                  <dt>Material</dt>
+                  <dd>Syntetic, wooden</dd>
+                </dl>
+                <dl class="dlist-align">
+                  <dt>Delivery</dt>
+                  <dd>Russia, USA, and Europe</dd>
+                </dl>
+              </article>
+
+              <aside class="col-sm-3 border-left">
+                <div class="action-wrap">
+                  <div class="price-wrap h4">
+                    <span class="price"> $56 </span>
+                    <del class="price-old"> $98</del>
+                  </div>
+                  <!-- info-price-detail // -->
+                  <p class="text-success">Free shipping</p>
+                  <br />
+                  <p>
+                    <a href="#" class="btn btn-primary"> Buy now </a>
+                    <a
+                      href="/produto/<%- product.id %>/<%- product.slug %>"
+                      class="btn btn-secondary"
+                    >
+                      Details
+                    </a>
+                  </p>
+                  <a href="#"><i class="fa fa-heart"></i> Add to wishlist</a>
+                </div>
+                <!-- action-wrap.// -->
+              </aside>
+              <!-- col.// -->
+            </div>
+            <!-- row.// -->
+          </div>
+          <!-- card-body .// -->
+        </article>
+        <% }) %>
+        <nav aria-label="Paginação de produtos">
+            <p class="my-2 small">
+            Mostrando os produtos <%= ((products.pagination.currentPage - 1) *
+            products.pagination.pageSize) + 1 %> até <%=
+            products.pagination.currentPage * products.pagination.pageSize > 
+            products.pagination.totalRecords ?
+            products.pagination.totalRecords :
+            products.pagination.currentPage * products.pagination.pageSize  %> de
+            um total de <%= products.pagination.totalRecords %>
+          </p>
+          <ul class="pagination justify-content-center">
+            <% if (products.pagination.currentPage > 1) { %>
+            <li class="page-item">
+              <a
+                class="page-link"
+                href="?pageSize=<%= products.pagination.pageSize%>&currentPage=<%= products.pagination.currentPage - 1%>"
+                tabindex="-1"
+                >Anterior</a
+              >
+            </li>
+            <% } %> 
+            <% for (let i = 1; i <= products.pagination.totalPages; i++) { %>
+            <li
+              class="page-item  <% if (products.pagination.currentPage === i) { %> active <% } %>"
+            >
+              <a
+                class="page-link"
+                href="?pageSize=<%= products.pagination.pageSize%>&currentPage=<%= i %>"
+              >
+                <%= i %> <% if (products.pagination.currentPage === i) { %>
+                <span class="sr-only">(current)</span>
+                <% } %>
+              </a>
+            </li>
+            <% } %> <% if (products.pagination.currentPage <
+            products.pagination.totalPages) { %>
+            <li class="page-item">
+              <a
+                class="page-link"
+                href="?pageSize=<%= products.pagination.pageSize%>&currentPage=<%= products.pagination.currentPage + 1%>"
+                >Próxima</a
+              >
+            </li>
+            <% } %>
+          </ul>
+        </nav>
+      </main>
+      <!-- col.// -->
+    </div>
+  </div>
+  <!-- container .//  -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+
+<!-- ========================= SECTION  ========================= -->
+<section class="section-name bg-white padding-y">
+  <div class="container">
+    <h4>Another section if needed</h4>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum.
+    </p>
+  </div>
+  <!-- container // -->
+</section>
+<!-- ========================= SECTION  END// ========================= -->
+
+<%- include('footer') %>

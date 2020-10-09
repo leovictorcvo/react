@@ -1,0 +1,9 @@
+h1 img {
+  width: 345px;
+  height: 57px;
+}
+
+.container {
+  max-width: 42em;
+  min-height: 100vh;
+}

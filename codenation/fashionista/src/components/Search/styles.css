@@ -1,0 +1,22 @@
+.query {
+  padding: 1rem;
+  margin: 0.8rem 0;
+  background-color: var(--alternate-background);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.8rem;
+}
+
+.query__input {
+  border: 0;
+  background-color: transparent;
+  width: 100%;
+}
+
+.result {
+  max-height: calc(100vh - 11rem);
+  overflow-y: auto;
+  font-size: 1.6rem;
+}

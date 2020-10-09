@@ -1,0 +1,14 @@
+<%- include('header') %>
+    <h3>Vagas <a href="/admin/vagas/nova">Nova vaga</a></h3>
+    <div>
+        <ul>
+            <% vagas.forEach(vaga => { %>
+                <li>
+                    <%- vaga.titulo %> | 
+                    <a href="/admin/vagas/editar/<%- vaga.id %>">Editar</a> | 
+                    <a href="/admin/vagas/delete/<%- vaga.id %>">Excluir</a>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+<%- include('footer') %>

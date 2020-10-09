@@ -1,0 +1,17 @@
+.cart__container {
+  max-height: calc(100vh - 13rem);
+  overflow-y: auto;
+}
+
+.cart__total {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  z-index: 10;
+  padding: 1rem;
+  background-color: var(--alternate-background);
+}

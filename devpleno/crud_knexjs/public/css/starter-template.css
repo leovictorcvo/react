@@ -1,0 +1,10 @@
+  .starter-template {
+    padding: 3rem 1.5rem;
+    max-height: calc(100vh - 88px);
+    min-height: calc(100vh - 88px);
+    display: flex;
+    flex-direction: column;
+  }
+  .starter-template .table-container {
+    overflow-y: scroll;
+  }

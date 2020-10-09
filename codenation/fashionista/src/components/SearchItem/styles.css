@@ -1,0 +1,37 @@
+.result__container {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  background-color: var(--alternate-background);
+  color: var(--text-color);
+  border: 1px solid var(--alternate-background);
+  margin-top: 8px;
+}
+
+.result__image {
+  height: 100px;
+}
+
+.result__data {
+  flex: 1;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.result__title {
+  margin-bottom: 0.5em;
+}
+
+.result__discount {
+  color: var(--discount-text-color);
+  text-decoration: line-through;
+}
+
+.result__price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}

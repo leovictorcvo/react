@@ -1,0 +1,51 @@
+<%- include('header') %>
+<main>
+  <form id="formConversao" method="GET" action="/cotacao">
+    <div class="card-deck mb-5 text-center">
+      <div class="card shadow-sm">
+        <div class="card-header">
+          <h4 class="my-0 font-weigth-normal">Cotação do dólar</h4>
+        </div>
+        <div class="card-body">
+          <input
+            type="number"
+            name="cotacao"
+            id="cotacao"
+            value="<%= cotacao %>"
+            pattern="[0-9]+([\.][0-9]{4})?"
+            step="0.0001"
+            min="0"
+            title="Deve ser um número válido com até 4 casas decimais."
+            required
+            class="form-control text-right"
+          />
+          <em class="small"><%= mensagem %></em>
+        </div>
+      </div>
+      <div class="card shadow-sm">
+        <div class="card-header">
+          <h4 class="my-0 font-weigth-normal">Quantidade de dólares</h4>
+        </div>
+        <div class="card-body">
+          <input
+            type="number"
+            name="quantidade"
+            id="quantidade"
+            pattern="[0-9]+([\.][0-9]+)?"
+            step="0.01"
+            min="0"
+            title="Deve ser um número válido com até 2 casas decimais."
+            required
+            class="form-control text-right"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="mt-5">
+      <button type="button" id="converterBtn" class="btn btn-lg btn-primary">Converter</button>
+      <p class="mt-5 text-danger" id="mensagemErro"></p>
+    </div>
+
+  </form>
+</main> 
+<%- include('footer', {script: '/scripts/home.js'}) %>

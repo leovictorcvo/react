@@ -1,0 +1,33 @@
+{
+  "name": "jobify",
+  "version": "0.1.0",
+  "description": "Simple job board for sites",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "node",
+    "ejs",
+    "job"
+  ],
+  "author": "Leonardo Victor",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.2",
+    "express": "^4.17.1",
+    "sqlite": "^3.0.3"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leovictorcvo/devPleno_jobify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leovictorcvo/devPleno_jobify/issues"
+  },
+  "homepage": "https://github.com/leovictorcvo/devPleno_jobify#readme"
+}

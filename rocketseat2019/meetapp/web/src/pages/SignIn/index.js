@@ -1,0 +1,43 @@
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import * as Yup from 'yup';
+import { Form, Input } from '@rocketseat/unform';
+
+import Logo from '~/assets/logo.svg';
+
+import { signInRequest } from '~/store/modules/auth/actions';
+
+const schema = Yup.object().shape({
+  email: Yup.string()
+    .email('E-mail com formato inválido')
+    .required('Favor informar o e-mail'),
+  password: Yup.string().required('Informe sua senha'),
+});
+
+export default function SignIn() {
+  const dispatch = useDispatch();
+  const loading = useSelector(state => state.auth.loading);
+
+  function handleSubmit({ email, password }) {
+    dispatch(signInRequest(email, password));
+  }
+
+  return (
+    <>
+      <img src={Logo} alt="Meetapp" />
+      <Form schema={schema} onSubmit={handleSubmit}>
+        <Input name="email" placeholder="Informe seu e-mail" />
+        <Input
+          type="password"
+          name="password"
+          placeholder="Informe sua senha"
+        />
+        <button type="submit">
+          {loading ? 'Verificando os dados...' : 'Entrar'}
+        </button>
+        <Link to="/register">Criar conta gratuita</Link>
+      </Form>
+    </>
+  );
+}

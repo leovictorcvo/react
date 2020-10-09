@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+<main role="main">
+  <div class="starter-template">
+    <h1>Edição</h1>
+    <p><a href="/pessoas">Voltar a lista de pessoas</a></p>
+    <form method="post">
+        <div class="form-group">
+            <label for="nomeInput">Nome</label>
+            <input type="text" class="form-control" name="nome" id="nomeInput" placeholder="Nome" autocomplete="off" value="<%= pessoa.nome%>">
+        </div>
+        <div class="form-group">
+            <label for="nascimentoInput">Nascimento</label>
+            <input type="date" class="form-control" name="nascimento" id="nascimentoInput" placeholder="Nascimento" value="<%= pessoa.nascimento %>">
+        </div>
+        <div class="form-group">
+            <label for="cargoInput">Cargo</label>
+            <input type="text" class="form-control" name="cargo" id="cargoInput" placeholder="Cargo" autocomplete="off" value="<%= pessoa.cargo %>">
+        </div>
+        <button type="submit" class="btn btn-default">Salvar</button>
+    </form>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
